@@ -1,0 +1,56 @@
+<div class="submit-form">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title style="display: flex;">
+                <h2
+                    style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: black; font-size: smaller; ">
+                    #{{state.pokemonid}}</h2>&nbsp;&nbsp;
+                <h2
+                    style="text-transform: capitalize;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size: smaller;">
+                    {{state.pokemonname}}</h2>&nbsp;&nbsp;
+                <mat-chip selected>&nbsp;<a
+                        style="text-transform: capitalize;font-size: smaller;">{{state.pokemonType.join('&nbsp; |
+                        &nbsp;')}}</a>
+                </mat-chip>&nbsp;
+            </mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="{{state.pokemonImage}}" alt="Pokemon">
+        <div class="stats">
+            <h2 style="color: white;font-size: 14px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Base
+                Experience: {{state.base_experience}} Exp</h2>
+            <h2 style="color: white;font-size: 14px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                Move:<a style="text-transform: capitalize;">&nbsp;{{state.moves}}</a>
+            </h2>
+            <h2 style="color: white;font-size: 14px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">HP:
+                {{state.hp}}</h2>
+            <mat-progress-bar color="warn" mode="determinate" value="{{state.hp}}"></mat-progress-bar>
+            <h2 style="color: white;font-size: 14px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                Attack: {{state.attack}}</h2>
+            <mat-progress-bar color="warn" mode="determinate" value="{{state.attack}}"></mat-progress-bar>
+            <h2 style="color: white;font-size: 14px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                Defense: {{state.defense}}</h2>
+            <mat-progress-bar color="warn" mode="determinate" value="{{state.defense}}"></mat-progress-bar>
+            <h2 style="color: white;font-size: 14px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                Speed: {{state.speed}}</h2>
+            <mat-progress-bar color="warn" mode="determinate" value="{{state.speed}}"></mat-progress-bar>
+            <br><br>
+        </div>
+        <mat-card-content>
+
+            <mat-chip-list aria-label="Pokemon Detail">
+                <mat-chip selected><a style="color: black;">Height: {{state.height}}</a> </mat-chip>
+                <mat-chip selected><a style="color: black;">Weight: {{state.weight}}</a> </mat-chip>
+            </mat-chip-list>
+        </mat-card-content>
+    </mat-card>
+    <br>
+    <div class="container" style="margin:auto;">
+        <h5
+            style="margin-left: -10%; margin-top: 1%;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-weight: bold;">
+            CATCH THIS POKEMON</h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button mat-fab color="warn" aria-label="Catch Me" (click)="savePokemon()" style="width: 55px;height: 55px;">
+            <mat-icon style="width: 50px; height: 45px;">pan_tool</mat-icon>
+        </button>
+    </div>
+</div>

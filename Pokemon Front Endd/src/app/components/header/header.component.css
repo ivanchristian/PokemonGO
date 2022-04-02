@@ -1,0 +1,14 @@
+.mat-toolbar {
+    background-color: rgb(63, 63, 63);
+    text-align: center;
+    justify-content: center;
+}
+
+.img:hover {
+    cursor: pointer;
+}
+
+.name {
+    justify-content: center;
+    text-align: center;
+}

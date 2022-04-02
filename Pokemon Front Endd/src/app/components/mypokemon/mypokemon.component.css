@@ -1,0 +1,51 @@
+.container {
+    width: 45%;
+    text-align: center;
+    justify-content: center;
+    margin-left: 28%;
+}
+
+table {
+    min-width: 60%;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    background-color: transparent;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 20%;
+    margin-left: -5%;
+    text-align: center;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+td,
+th {
+    width: 25%;
+    border: 5px black;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.mat-header-cell {
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+.mat-cell:first-letter {
+    text-transform: capitalize;
+}
+
+.mat-paginator {
+    background-color: transparent;
+    width: 60%;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
