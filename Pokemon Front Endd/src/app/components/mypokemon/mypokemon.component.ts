@@ -17,7 +17,7 @@ export class MypokemonComponent implements OnInit {
   pokemons = [];
 
   currentPokemon: Pokemon = {
-    id: '1',
+    id: '',
     counter: 0,
     index: '',
     image: '',
@@ -33,7 +33,7 @@ export class MypokemonComponent implements OnInit {
     this.getAll();
   }
 
-  async getAll() {
+  getAll() {
     let pokemonData;
     for (let i = 0; i <= 200; i++) {
       this.pokeService.getAll().subscribe(
@@ -55,7 +55,7 @@ export class MypokemonComponent implements OnInit {
       );
     }
   }
-  async applyFilter(event: Event) {
+  applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
@@ -64,7 +64,7 @@ export class MypokemonComponent implements OnInit {
     }
   }
 
-  async getRow(row: any) {
+  getRow(row: any) {
     this.router.navigateByUrl(`pokemondetail/${row.position}`);
   }
 
@@ -98,7 +98,7 @@ export class MypokemonComponent implements OnInit {
   }
 
   renamePokemon(id: any): void {
-    this.pokeService.update(this.currentPokemon.id, this.currentPokemon)
+    this.pokeService.update(id, this.currentPokemon)
       .subscribe(
         response => {
           console.log(response);
@@ -106,6 +106,7 @@ export class MypokemonComponent implements OnInit {
         error => {
           console.log(error);
         });
+    window.location.reload();
   }
 }
 

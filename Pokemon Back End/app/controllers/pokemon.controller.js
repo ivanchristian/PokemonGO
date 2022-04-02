@@ -68,23 +68,38 @@ exports.update = (req, res) => {
                 console.log(data);
                 console.log(JSON.stringify(data.counter));
                 poke = JSON.stringify(data.name).slice(1, -1);
-                fibo = JSON.stringify(data.counter);
-                function listFibonacci(fibo) {
-                    var before = 0;
-                    var actual = 1;
-                    var next = 1;
+                fibo = parseInt(data.counter);
+                console.log(fibo);
+                // function listFibonacci(fibo) {
+                //     var before = 0;
+                //     var actual = 1;
+                //     var next = 1;
 
-                    for (let i = 0; i < fibo; i++) {
-                        console.log(fibo)
-                        before = actual + next;
-                        actual = next
-                        next = before
+                //     for (let i = 0; i < fibo; i++) {
+                //         before = actual + next;
+                //         actual = next
+                //         next = before
+                //     }
+                // }
+                function counterfibonacci(fibo) {
+                    var a = 1, b = 1, temp;
+
+                    while (fibo >= 0) {
+                        temp = a - 1;
+                        a = a + b;
+                        b = temp;
+                        fibo--;
                     }
-                }
-                list = listFibonacci(fibo);
-                poke = poke.concat(list);
-                //console.log(listFibonacci(fibo));
 
+                    return b;
+                }
+                list = (counterfibonacci(fibo));
+                console.log(list);
+                if (poke.includes("-")) {
+                    poke = poke.substring(0, poke.indexOf("-"));
+                }
+                poke = poke.concat('-' + list);
+                console.log(poke);
             } else {
                 res.status(404).send({
                     message: `Cannot find Tutorial with id=${id}.`
