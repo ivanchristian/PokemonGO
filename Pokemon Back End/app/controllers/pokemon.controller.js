@@ -44,13 +44,13 @@ exports.findOne = (req, res) => {
                 res.send(data);
             } else {
                 res.status(404).send({
-                    message: `Cannot find Tutorial with id=${id}.`
+                    message: `Cannot find Pokemon with id=${id}.`
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: "Error retrieving Tutorial with id=" + id
+                message: "Error retrieving Pokemon with id=" + id
             });
         });
 };
@@ -102,7 +102,7 @@ exports.update = (req, res) => {
                 console.log(poke);
             } else {
                 res.status(404).send({
-                    message: `Cannot find Tutorial with id=${id}.`
+                    message: `Cannot find Pokemon with id=${id}.`
                 });
             }
 
@@ -118,7 +118,7 @@ exports.update = (req, res) => {
                         });
                     } else {
                         res.send({
-                            message: `Cannot update Pokemon with id=${id}. Maybe Tutorial was not found or req.body is empty!`
+                            message: `Cannot update Pokemon with id=${id}!`
                         });
                     }
                 })
